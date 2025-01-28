@@ -14,14 +14,10 @@ export default function SignInPage() {
 
   return (
     <div className="flex min-h-screen w-full container my-auto mx-auto">
-      <div className="max-w-[384px] mx-auto flex flex-col my-auto gap-4 pb-8">
+      <div className="max-w-[400px] w-full mx-auto flex flex-col my-auto gap-4 pb-8">
         {step === "signIn" ? (
           <>
-            <h2 className="font-semibold text-2xl tracking-tight">
-              Sign in or create an account
-            </h2>
-            <SignInWithGitHub />
-            <SignInMethodDivider />
+            <h2 className="font-semibold text-2xl tracking-tight">Sign In</h2>
             <SignInWithMagicLink handleLinkSent={() => setStep("linkSent")} />
           </>
         ) : (
