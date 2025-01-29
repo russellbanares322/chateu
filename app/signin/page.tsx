@@ -1,12 +1,10 @@
 "use client";
 
-import { SignInMethodDivider } from "@/components/SignInMethodDivider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuthActions } from "@convex-dev/auth/react";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 
 export default function SignInPage() {
@@ -37,20 +35,6 @@ export default function SignInPage() {
         )}
       </div>
     </div>
-  );
-}
-
-function SignInWithGitHub() {
-  const { signIn } = useAuthActions();
-  return (
-    <Button
-      className="flex-1"
-      variant="outline"
-      type="button"
-      onClick={() => void signIn("github", { redirectTo: "/product" })}
-    >
-      <GitHubLogoIcon className="mr-2 h-4 w-4" /> GitHub
-    </Button>
   );
 }
 
