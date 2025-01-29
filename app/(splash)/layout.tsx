@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -20,28 +21,8 @@ export default function SplashPageLayout({
         </nav>
       </header>
       <main className="flex grow flex-col">{children}</main>
-      <footer className="border-t">
-        <div className="container py-4 text-sm leading-loose">
-          Built with ❤️ at{" "}
-          <FooterLink href="https://www.convex.dev/">Convex</FooterLink>.
-          Powered by Convex,{" "}
-          <FooterLink href="https://nextjs.org/">Next.js</FooterLink> and{" "}
-          <FooterLink href="https://ui.shadcn.com/">shadcn/ui</FooterLink>.
-        </div>
-      </footer>
+      <Footer />
     </div>
-  );
-}
-
-function FooterLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="underline underline-offset-4 hover:no-underline"
-      target="_blank"
-    >
-      {children}
-    </Link>
   );
 }
 
