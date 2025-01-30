@@ -7,7 +7,10 @@ export function SignInWithGoogle() {
   const { signIn } = useAuthActions();
   return (
     <div className="shadow-md border rounded-xl p-3 w-full">
-      <h1 className="text-2xl text-center font-bold mb-5">Welcome to CHATEU</h1>
+      <div className="flex items-center flex-col justify-center gap-1 mb-6">
+        <h1 className="text-2xl font-bold">Welcome to CHATEU</h1>
+        <p className="font-medium">Sign In to continue</p>
+      </div>
       <Button
         className="w-full bg-green-600"
         variant="outline"
