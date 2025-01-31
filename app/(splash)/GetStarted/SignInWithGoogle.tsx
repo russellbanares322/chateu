@@ -12,7 +12,7 @@ export function SignInWithGoogle() {
         <p className="font-medium">Sign In to continue</p>
       </div>
       <Button
-        className="w-full bg-green-600"
+        className="w-full bg-green-600 hover:bg-green-700 duration-200 ease-in-out"
         variant="outline"
         type="button"
         // onClick={() => void signIn("github", { redirectTo: "/product" })}
