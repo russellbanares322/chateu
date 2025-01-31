@@ -5,34 +5,35 @@ import { Input } from "@/components/ui/input";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuthActions } from "@convex-dev/auth/react";
-import { useState } from "react";
+import googleIcon from "@/components/images/google.png";
+import Image from "next/image";
 
 export default function SignInPage() {
-  const [step, setStep] = useState<"signIn" | "linkSent">("signIn");
+  const { signIn } = useAuthActions();
 
   return (
-    <div className="flex min-h-screen w-full container my-auto mx-auto">
-      <div className="max-w-[400px] w-full mx-auto flex flex-col my-auto gap-4 pb-8">
-        {step === "signIn" ? (
-          <>
-            <h2 className="font-semibold text-2xl tracking-tight">Sign In</h2>
-            <SignInWithMagicLink handleLinkSent={() => setStep("linkSent")} />
-          </>
-        ) : (
-          <>
-            <h2 className="font-semibold text-2xl tracking-tight">
-              Check your email
-            </h2>
-            <p>A sign-in link has been sent to your email address.</p>
-            <Button
-              className="p-0 self-start"
-              variant="link"
-              onClick={() => setStep("signIn")}
-            >
-              Cancel
-            </Button>
-          </>
-        )}
+    <div className="flex items-center justify-center min-h-screen max-w-[500px] mx-auto">
+      <div className="shadow-md border rounded-xl p-3 w-full">
+        <div className="flex items-center flex-col justify-center gap-1 mb-6">
+          <h1 className="text-2xl font-bold">Welcome to CHATEU</h1>
+          <p className="font-medium">Sign In to continue</p>
+        </div>
+        <Button
+          className="w-full bg-green-600 hover:bg-green-700 duration-200 ease-in-out"
+          variant="outline"
+          type="button"
+          // onClick={() => void signIn("github", { redirectTo: "/product" })}
+          onClick={() => void signIn("google")}
+        >
+          <Image
+            className="bg-white rounded-full p-[2px]"
+            height={25}
+            width={25}
+            alt="Sign In with Google"
+            src={googleIcon}
+          />
+          <p className="font-medium text-white">Sign In with Google</p>
+        </Button>
       </div>
     </div>
   );
