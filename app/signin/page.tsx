@@ -22,7 +22,6 @@ export default function SignInPage() {
           className="w-full bg-green-600 hover:bg-green-700 duration-200 ease-in-out"
           variant="outline"
           type="button"
-          // onClick={() => void signIn("github", { redirectTo: "/product" })}
           onClick={() => void signIn("google")}
         >
           <Image
