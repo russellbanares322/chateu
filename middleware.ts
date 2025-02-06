@@ -8,7 +8,7 @@ import { routePaths } from "./data/route-paths";
 const { SIGN_IN_PATH } = routePaths
 const isSignInPage = createRouteMatcher([SIGN_IN_PATH]);
 const isProtectedRoute = createRouteMatcher(["/product(.*)"]);
-const isInRootPage = createRouteMatcher(["/"]);
+const isInProtectedRoute = createRouteMatcher(["/"]);
 
 export default convexAuthNextjsMiddleware(async (request, { convexAuth }) => {
   if (isSignInPage(request) && (await convexAuth.isAuthenticated())) {
@@ -18,7 +18,7 @@ export default convexAuthNextjsMiddleware(async (request, { convexAuth }) => {
     return nextjsMiddlewareRedirect(request, SIGN_IN_PATH);
   }
 
-  if(isInRootPage(request)){
+  if(isInProtectedRoute(request) && !(await convexAuth.isAuthenticated())){
     return nextjsMiddlewareRedirect(request, SIGN_IN_PATH)
   }
 });
