@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <ConvexAuthNextjsServerProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={`${quicksand.className} antialiased`}>
+        <body className={`${quicksand.className} antialiased bg-neutral-100`}>
           <ThemeProvider attribute="class">{children}</ThemeProvider>
         </body>
       </html>
