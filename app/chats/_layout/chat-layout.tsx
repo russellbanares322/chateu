@@ -15,7 +15,7 @@ export default function ChatLayout({
         {/* Main Content */}
         <div className="col-span-6 container">{children}</div>
         {/* Right Content */}
-        <div className="bg-blue-400 col-span-1"></div>
+        <div className="bg-blue-400 col-span-1">Right Content</div>
       </div>
     </div>
   );
