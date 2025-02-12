@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SendIcon } from "lucide-react";
 
 export default function SendNewMessage() {
   return (
@@ -12,7 +13,9 @@ export default function SendNewMessage() {
             className="border rounded-md placeholder:text-sm py-1 px-3"
             placeholder="Enter user id or group id..."
           />
-          <Button size="sm">Send Message</Button>
+          <Button size="sm">
+            Send Message <SendIcon />
+          </Button>
         </div>
       </div>
     </div>

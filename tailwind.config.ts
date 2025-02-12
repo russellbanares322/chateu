@@ -18,6 +18,9 @@ export default {
     },
     extend: {
       colors: {
+        whitesmoke: "#fefefe",
+        gray: "#232627",
+        black: "#141618",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

@@ -6,20 +6,22 @@ export default function ChatLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const hasChats = false;
+  const hasChats = true;
 
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen h-full w-full">
       {hasChats && (
-        <div className="grid grid-cols-8 min-h-screen">
-          {/* Left Content */}
-          <div className="bg-red-400 col-span-1">
+        <div className="bg-black h-full grid grid-cols-8 min-h-screen">
+          {/* Sidebar */}
+          <div className="col-span-1 w-full h-full">
             <Sidebar />
           </div>
           {/* Main Content */}
-          <div className="col-span-6 container">{children}</div>
-          {/* Right Content */}
-          <div className="bg-blue-400 col-span-1">Right Sidebar</div>
+          <div className="col-span-7 w-full max-h-[900px] h-full">
+            <div className="bg-white p-10 m-7 rounded-xl h-full">
+              {children}
+            </div>
+          </div>
         </div>
       )}
       {!hasChats && <SendNewMessage />}
