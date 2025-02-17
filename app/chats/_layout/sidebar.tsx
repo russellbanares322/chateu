@@ -6,11 +6,14 @@ export default function Sidebar() {
 
   // Map real data
   return (
-    <div className="p-10">
-      <h1 className="text-white mb-5">CHATEU</h1>
-      <ul className="space-y-5">
+    <div className="py-14 pl-2">
+      <h1 className="text-white mb-5 ml-1">CHATEU</h1>
+      <ul className="space-y-3 w-full">
         {sampleData?.map((user) => (
-          <li key={user.id} className="text-white cursor-pointer">
+          <li
+            key={user.id}
+            className="text-white cursor-pointer hover:bg-slate-400 py-1 px-2 rounded-md"
+          >
             {user.name}
           </li>
         ))}
