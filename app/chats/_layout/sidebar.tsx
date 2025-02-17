@@ -8,13 +8,13 @@ export default function Sidebar() {
   return (
     <div className="p-10">
       <h1 className="text-white mb-5">CHATEU</h1>
-      <div className="space-y-5">
+      <ul className="space-y-5">
         {sampleData?.map((user) => (
-          <div key={user.id}>
-            <p className="text-white">{user.name}</p>
-          </div>
+          <li key={user.id} className="text-white cursor-pointer">
+            {user.name}
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
