@@ -1,3 +1,12 @@
-export default function Chat() {
-  return <div>Chat</div>;
+import ChatLayout from "../_layout/chat-layout";
+
+type ChatProps = {
+  params: {
+    chatId: string;
+  };
+};
+export default async function Chat({ params }: ChatProps) {
+  const { chatId } = await params;
+
+  return <ChatLayout>Chat: {chatId}</ChatLayout>;
 }
