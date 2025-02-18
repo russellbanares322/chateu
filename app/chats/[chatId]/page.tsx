@@ -1,10 +1,11 @@
 import ChatLayout from "../_layout/chat-layout";
 
 type ChatProps = {
-  params: {
+  params: Promise<{
     chatId: string;
-  };
+  }>;
 };
 export default async function Chat({ params }: ChatProps) {
-  return <ChatLayout>Chat: {params.chatId}</ChatLayout>;
+  const { chatId } = await params;
+  return <ChatLayout>Chat: {chatId}</ChatLayout>;
 }
