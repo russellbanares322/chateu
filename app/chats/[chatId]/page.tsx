@@ -6,7 +6,5 @@ type ChatProps = {
   };
 };
 export default async function Chat({ params }: ChatProps) {
-  const { chatId } = await params;
-
-  return <ChatLayout>Chat: {chatId}</ChatLayout>;
+  return <ChatLayout>Chat: {params.chatId}</ChatLayout>;
 }
