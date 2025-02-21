@@ -17,7 +17,7 @@ export default async function Chat({ params }: ChatProps) {
         </div>
         <textarea
           className="border w-[1000px] rounded-md focus:outline-blue-500"
-          placeholder=""
+          placeholder="Enter your chat here..."
         />
       </div>
     </ChatLayout>
