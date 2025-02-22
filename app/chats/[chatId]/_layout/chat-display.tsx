@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { UserIcon } from "lucide-react";
-import React from "react";
+
 const dummyChatData = Array.from({ length: 12 })
   .fill("")
   .map((_, index) => ({
