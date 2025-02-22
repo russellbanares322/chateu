@@ -20,6 +20,7 @@ export default {
       colors: {
         whitesmoke: "#fefefe",
         gray: "#232627",
+        "gray-100": "#f5f5f5",
         black: "#141618",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
