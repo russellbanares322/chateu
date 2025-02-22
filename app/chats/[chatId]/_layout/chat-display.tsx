@@ -15,7 +15,7 @@ export default function ChatDisplay() {
   return (
     <div className="relative">
       {/* Chat Header */}
-      <div className="border-b w-[calc(100%-930px)] mx-auto bg-white fixed flex items-center justify-between mb-2 gap-2 py-2">
+      <div className="border-b w-full  bg-white sticky flex items-center justify-between mb-2 gap-2 py-2">
         <div className="flex items-start gap-2">
           <UserIcon
             className="bg-blue-500 rounded-full p-2 text-white"
@@ -31,8 +31,8 @@ export default function ChatDisplay() {
       </div>
       {/* Chat Content */}
       <div
-        className="flex flex-col gap-5 overflow-auto mt-16"
-        style={{ maxHeight: "calc(100% - 400px)" }}
+        className="flex flex-col gap-5 overflow-auto pt-7"
+        style={{ maxHeight: "calc(100% - 410px)" }}
       >
         {dummyChatData.map((chat, index) => {
           const isMyChat = chat.authorId === userId;
