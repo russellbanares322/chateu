@@ -17,12 +17,7 @@ export default async function Chat({ params }: ChatProps) {
     <ChatLayout>
       <div className="flex gap-2 items-center justify-center">
         <div className="relative flex flex-col p-2 border border-solid w-[1000px] h-[700px] rounded-md">
-          <div
-            className="flex flex-col gap-5 overflow-auto"
-            style={{ maxHeight: "calc(100% - 100px)" }}
-          >
-            <ChatDisplay />
-          </div>
+          <ChatDisplay />
           <ChatInput />
         </div>
       </div>
