@@ -24,9 +24,9 @@ export default function ChatDisplay() {
           <p>Sample Name</p>
         </div>
         <div>
-          {/* <Button className="rounded-full" variant="ghost">
-          </Button> */}
-          <EllipsisIcon size={25} />
+          <Button className="rounded-full" size="icon" variant="ghost">
+            <EllipsisIcon size={35} />
+          </Button>
         </div>
       </div>
       {/* Chat Content */}

@@ -16,7 +16,7 @@ export default async function Chat({ params }: ChatProps) {
   return (
     <ChatLayout>
       <div className="flex gap-2 items-center justify-center overflow-y-hidden">
-        <div className="relative flex flex-col p-2 border border-solid w-[1000px] h-[700px] rounded-md">
+        <div className="relative flex flex-col p-2 border border-solid w-[1000px] h-[720px] rounded-md">
           <ChatDisplay />
           <ChatInput />
         </div>
