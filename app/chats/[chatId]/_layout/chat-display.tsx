@@ -45,7 +45,14 @@ export default function ChatDisplay() {
               key={index}
             >
               {!isMyChat && <UserIcon />}
-              <div className="bg-slate-200 p-2 rounded-xl">
+              <div
+                className={cn(
+                  "bg-slate-200 p-2",
+                  isMyChat
+                    ? "rounded-tl-xl rounded-bl-xl rounded-tr-xl rounded-br-sm"
+                    : "rounded-tl-xl rounded-br-xl rounded-tr-xl rounded-bl-sm",
+                )}
+              >
                 <p>{chat.message}</p>
               </div>
             </div>
