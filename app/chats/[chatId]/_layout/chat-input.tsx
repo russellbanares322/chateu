@@ -12,7 +12,7 @@ export default function ChatInput() {
   };
 
   return (
-    <div className="flex items-center bg-gray-100 gap-1 absolute rounded-md bottom-0 left-0 right-0 mx-auto w-[950px] mb-4 px-2">
+    <form className="flex items-center bg-gray-100 gap-1 absolute rounded-md bottom-0 left-0 right-0 mx-auto w-[950px] mb-4 px-2">
       <textarea
         autoFocus
         className="border max-h-[900px] rounded-md p-1 bg-gray-100  w-full outline-none border-none resize-none"
@@ -35,6 +35,6 @@ export default function ChatInput() {
           Send <SendIcon />
         </Button>
       </div>
-    </div>
+    </form>
   );
 }
