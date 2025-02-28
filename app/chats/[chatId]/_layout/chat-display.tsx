@@ -5,6 +5,7 @@ import { EllipsisIcon, UserIcon } from "lucide-react";
 const dummyChatData = Array.from({ length: 15 })
   .fill("")
   .map((_, index) => ({
+    id: index,
     authorId: index % 2 === 0 ? "XXY" : `ABC-${index}`,
     message: "This is a sample message, test 123456.",
   }));
@@ -42,7 +43,7 @@ export default function ChatDisplay() {
                 "flex items-center mx-3 gap-2",
                 isMyChat ? "justify-end" : "justify-start",
               )}
-              key={index}
+              key={chat.id}
             >
               {!isMyChat && <UserIcon />}
               <div
