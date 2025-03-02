@@ -22,7 +22,7 @@ export default function ChatDisplay() {
             className="bg-blue-500 rounded-full p-2 text-white"
             size={30}
           />
-          <p>Sample Name</p>
+          <p>Display Name</p>
         </div>
         <div>
           <Button className="rounded-full" size="icon" variant="ghost">
@@ -35,7 +35,7 @@ export default function ChatDisplay() {
         className="flex flex-col gap-5 overflow-auto pt-7"
         style={{ maxHeight: "calc(100% - 410px)" }}
       >
-        {dummyChatData.map((chat, index) => {
+        {dummyChatData.map((chat) => {
           const isMyChat = chat.authorId === userId;
           return (
             <div
