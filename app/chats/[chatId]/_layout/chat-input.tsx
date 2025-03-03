@@ -31,7 +31,7 @@ export default function ChatInput() {
             </div>
           )}
         </div>
-        <Button>
+        <Button type="submit">
           Send <SendIcon />
         </Button>
       </div>
