@@ -8,3 +8,4 @@
 # Frontend
 
 - [] Instantiate page routes.
+- [] Make sure that the page is mobile responsive.
