@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
+import NextTopLoader from "nextjs-toploader";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
     <ConvexAuthNextjsServerProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={`${quicksand.className} antialiased bg-neutral-100`}>
+          <NextTopLoader />
           <ThemeProvider attribute="class">{children}</ThemeProvider>
         </body>
       </html>
