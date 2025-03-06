@@ -8,7 +8,6 @@ type ChatProps = {
   }>;
 };
 
-// Map real data
 export default async function Chat({ params }: ChatProps) {
   const { chatId } = await params;
 
