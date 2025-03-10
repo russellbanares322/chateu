@@ -2,6 +2,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { EllipsisIcon, UserIcon } from "lucide-react";
 
+type ChatDisplayProps = {
+  chatId: string;
+};
+
 const dummyChatData = Array.from({ length: 15 })
   .fill("")
   .map((_, index) => ({
@@ -10,7 +14,7 @@ const dummyChatData = Array.from({ length: 15 })
     message: "This is a sample message, test 123456.",
   }));
 
-export default function ChatDisplay() {
+export default function ChatDisplay({ chatId }: ChatDisplayProps) {
   const userId = "XXY";
 
   return (
@@ -22,7 +26,7 @@ export default function ChatDisplay() {
             className="bg-blue-500 rounded-full p-2 text-white"
             size={30}
           />
-          <p>Display Name</p>
+          <p>{`User ${chatId}`}</p>
         </div>
         <div>
           <Button className="rounded-full" size="icon" variant="ghost">
