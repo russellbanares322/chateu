@@ -11,6 +11,7 @@ type ChatProps = {
 // Map real data
 export default async function Chat({ params }: ChatProps) {
   const { chatId } = await params;
+  console.log(chatId);
 
   return (
     <ChatLayout>
