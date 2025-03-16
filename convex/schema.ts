@@ -8,6 +8,11 @@ export default defineSchema({
   ...authTables,
   chats: defineTable({
      chatSessionId: v.string(),
+     chatItems: v.object(
+      {
+        userIds: v.array(v.string())
+      }
+     )
   }),
   messages: defineTable({
     userId: v.id("users"),

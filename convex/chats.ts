@@ -8,5 +8,4 @@ export const chats = query({
       
         return chatDatas
     }
-
 })
