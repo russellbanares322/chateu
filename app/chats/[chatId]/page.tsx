@@ -8,6 +8,7 @@ type ChatProps = {
   }>;
 };
 
+// Implement sending of chats
 export default async function Chat({ params }: ChatProps) {
   const { chatId } = await params;
 
