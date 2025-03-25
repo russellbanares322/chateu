@@ -7,6 +7,7 @@ export default function Sidebar() {
     name: `User ${index + 1}`,
   }));
 
+  // Map real data
   return (
     <div className="py-14 pl-2">
       <h1 className="text-white mb-5 ml-1">CHATEU</h1>
