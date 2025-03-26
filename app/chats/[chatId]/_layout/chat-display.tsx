@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { EllipsisIcon, UserIcon } from "lucide-react";
+import { EllipsisIcon, MoreHorizontal, UserIcon } from "lucide-react";
 
 type ChatDisplayProps = {
   chatId: string;
@@ -28,11 +36,21 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
           />
           <p>{`User ${chatId}`}</p>
         </div>
-        <div>
-          <Button className="rounded-full" size="icon" variant="ghost">
-            <EllipsisIcon size={35} />
-          </Button>
-        </div>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button className="rounded-full" size="icon" variant="ghost">
+              <EllipsisIcon size={35} />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuItem>Copy payment ID</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>View customer</DropdownMenuItem>
+            <DropdownMenuItem>View payment details</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
       {/* Chat Content */}
       <div
