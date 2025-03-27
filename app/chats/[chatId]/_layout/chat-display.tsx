@@ -3,12 +3,17 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { EllipsisIcon, MoreHorizontal, UserIcon } from "lucide-react";
+import {
+  Bell,
+  EllipsisIcon,
+  MoreHorizontal,
+  UserIcon,
+  UserX,
+} from "lucide-react";
 
 type ChatDisplayProps = {
   chatId: string;
@@ -44,11 +49,17 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem>Copy payment ID</DropdownMenuItem>
+            <DropdownMenuItem>
+              <UserIcon /> View profile
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Bell />
+              Mute notifications
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>
+              <UserX /> Block
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
