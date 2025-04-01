@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -6,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { DropdownItem } from "@/constants/types";
 import { cn } from "@/lib/utils";
 import {
   Bell,
@@ -29,6 +32,30 @@ const dummyChatData = Array.from({ length: 15 })
 
 export default function ChatDisplay({ chatId }: ChatDisplayProps) {
   const userId = "XXY";
+  const userDropdownItems: DropdownItem[] = [
+    {
+      key: 1,
+      label: "View profile",
+      icon: <UserIcon />,
+      action: () => console.log("View Profile"),
+    },
+    {
+      key: 2,
+      label: "Mute notifications",
+      icon: <Bell />,
+      action: () => console.log("Mute Notifications"),
+    },
+    {
+      key: 3,
+      divider: <DropdownMenuSeparator />,
+    },
+    {
+      key: 4,
+      label: "Block",
+      icon: <UserX />,
+      action: () => console.log("Block"),
+    },
+  ];
 
   return (
     <div className="relative">
@@ -41,7 +68,6 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
           />
           <p>{`User ${chatId}`}</p>
         </div>
-
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="rounded-full" size="icon" variant="ghost">
@@ -49,17 +75,18 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem>
-              <UserIcon /> View profile
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Bell />
-              Mute notifications
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <UserX /> Block
-            </DropdownMenuItem>
+            {userDropdownItems.map((item) => {
+              return (
+                <div key={item.key}>
+                  {!item.divider && (
+                    <DropdownMenuItem>
+                      {item.icon} {item.label}
+                    </DropdownMenuItem>
+                  )}
+                  {item.divider && <DropdownMenuSeparator />}
+                </div>
+              );
+            })}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
