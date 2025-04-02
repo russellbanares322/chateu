@@ -10,13 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { DropdownItem } from "@/constants/types";
 import { cn } from "@/lib/utils";
-import {
-  Bell,
-  EllipsisIcon,
-  MoreHorizontal,
-  UserIcon,
-  UserX,
-} from "lucide-react";
+import { Bell, EllipsisIcon, UserIcon, UserX } from "lucide-react";
 
 type ChatDisplayProps = {
   chatId: string;
