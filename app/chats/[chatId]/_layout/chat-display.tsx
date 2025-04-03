@@ -26,6 +26,7 @@ const dummyChatData = Array.from({ length: 15 })
 
 export default function ChatDisplay({ chatId }: ChatDisplayProps) {
   const userId = "XXY";
+  // Implement showing of alert before blocking a user
   const userDropdownItems: DropdownItem[] = [
     {
       key: 1,
