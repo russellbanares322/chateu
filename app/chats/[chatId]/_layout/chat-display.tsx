@@ -131,19 +131,21 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
       {/* Block User Alert Confirmation Dialog */}
       <AlertDialog
         open={showBlockUserAlert}
-        onOpenChange={setShowBlockUserAlert}
+        onOpenChange={(open) => {
+          document.body.style.pointerEvents = "";
+          setShowBlockUserAlert(open);
+        }}
       >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+              You will block this user.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
+            <AlertDialogAction>Block</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
