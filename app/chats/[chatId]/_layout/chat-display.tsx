@@ -140,7 +140,7 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
           <AlertDialogHeader>
             <AlertDialogTitle>Are you sure?</AlertDialogTitle>
             <AlertDialogDescription>
-              You will block this user.
+              You will block this user, this action can be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
