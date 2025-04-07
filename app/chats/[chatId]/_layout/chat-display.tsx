@@ -132,7 +132,9 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
       <AlertDialog
         open={showBlockUserAlert}
         onOpenChange={(open) => {
-          document.body.style.pointerEvents = "";
+          setTimeout(() => {
+            document.body.style.pointerEvents = "";
+          }, 500);
           setShowBlockUserAlert(open);
         }}
       >
