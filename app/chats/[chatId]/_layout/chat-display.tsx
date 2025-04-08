@@ -35,9 +35,29 @@ const dummyChatData = Array.from({ length: 15 })
     message: "This is a sample message, test 123456.",
   }));
 
+const muteNotificationDurations = [
+  {
+    label: "For 15 minutes",
+  },
+  {
+    label: "For 1 hour",
+  },
+  {
+    label: "For 8 hours",
+  },
+  {
+    label: "For 24 hours",
+  },
+  {
+    label: "Until I turn it back on",
+  },
+];
+
 export default function ChatDisplay({ chatId }: ChatDisplayProps) {
   const userId = "XXY";
   const [showBlockUserAlert, setShowBlockUserAlert] = useState(false);
+  const [showMuteNotificationAlert, setShowMuteNotificationAlert] =
+    useState(false);
 
   // Implement showing of alert before blocking a user
   const userDropdownItems: DropdownItem[] = [
@@ -51,7 +71,7 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
       key: 2,
       label: "Mute notifications",
       icon: <Bell />,
-      action: () => console.log("Mute Notifications"),
+      action: () => setShowMuteNotificationAlert(true),
     },
     {
       key: 3,
@@ -148,6 +168,32 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction>Block</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Mute Notification Alert Confirmation Dialog */}
+      <AlertDialog
+        open={showBlockUserAlert}
+        onOpenChange={(open) => {
+          setTimeout(() => {
+            document.body.style.pointerEvents = "";
+          }, 500);
+          setShowBlockUserAlert(open);
+        }}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Mute conversation</AlertDialogTitle>
+            <div></div>
+            <AlertDialogDescription>
+              Chat windows will stay closed and you won't get push notifications
+              on your devices.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction>Mute</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
