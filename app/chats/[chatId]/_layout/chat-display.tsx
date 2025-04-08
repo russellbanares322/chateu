@@ -18,6 +18,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { DropdownItem } from "@/constants/types";
 import { cn } from "@/lib/utils";
 import { Bell, EllipsisIcon, UserIcon, UserX } from "lucide-react";
@@ -38,18 +40,23 @@ const dummyChatData = Array.from({ length: 15 })
 const muteNotificationDurations = [
   {
     label: "For 15 minutes",
+    value: "15mins",
   },
   {
     label: "For 1 hour",
+    value: "1hr",
   },
   {
     label: "For 8 hours",
+    value: "8hrs",
   },
   {
     label: "For 24 hours",
+    value: "24hrs",
   },
   {
     label: "Until I turn it back on",
+    value: "custom",
   },
 ];
 
@@ -185,7 +192,16 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Mute conversation</AlertDialogTitle>
-            <div>Data</div>
+            <RadioGroup className="py-5 space-y-3" defaultValue="comfortable">
+              {muteNotificationDurations.map((item) => (
+                <div key={item.value} className="flex items-center space-x-2">
+                  <RadioGroupItem value={item.value} id={item.value} />
+                  <Label className="text-md" htmlFor={item.value}>
+                    {item.label}
+                  </Label>
+                </div>
+              ))}
+            </RadioGroup>
             <AlertDialogDescription>
               Chat windows will stay closed and you won't get push notifications
               on your devices.
