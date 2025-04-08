@@ -174,18 +174,18 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
 
       {/* Mute Notification Alert Confirmation Dialog */}
       <AlertDialog
-        open={showBlockUserAlert}
+        open={showMuteNotificationAlert}
         onOpenChange={(open) => {
           setTimeout(() => {
             document.body.style.pointerEvents = "";
           }, 500);
-          setShowBlockUserAlert(open);
+          setShowMuteNotificationAlert(open);
         }}
       >
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Mute conversation</AlertDialogTitle>
-            <div></div>
+            <div>Data</div>
             <AlertDialogDescription>
               Chat windows will stay closed and you won't get push notifications
               on your devices.
