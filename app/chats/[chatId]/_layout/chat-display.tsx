@@ -92,7 +92,6 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
     },
   ];
 
-  // Implement hover style in mute notification durations item
   return (
     <div className="relative">
       {/* Chat Header */}
@@ -195,7 +194,10 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
             <AlertDialogTitle>Mute conversation</AlertDialogTitle>
             <RadioGroup className="py-5 space-y-3" defaultValue="comfortable">
               {muteNotificationDurations.map((item) => (
-                <div key={item.value} className="flex items-center space-x-2">
+                <div
+                  key={item.value}
+                  className="flex items-center space-x-2 hover:bg-slate-50 px-2 py-1 rounded-md cursor-pointer"
+                >
                   <RadioGroupItem value={item.value} id={item.value} />
                   <Label className="text-md" htmlFor={item.value}>
                     {item.label}
