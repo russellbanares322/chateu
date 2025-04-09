@@ -92,6 +92,7 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
     },
   ];
 
+  // Implement hover style in mute notification durations item
   return (
     <div className="relative">
       {/* Chat Header */}
