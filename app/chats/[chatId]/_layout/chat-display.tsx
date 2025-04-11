@@ -92,7 +92,6 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
     },
   ];
 
-  // Implement convex
   return (
     <div className="relative">
       {/* Chat Header */}
