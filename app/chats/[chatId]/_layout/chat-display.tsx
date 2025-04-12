@@ -66,7 +66,6 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
   const [showMuteNotificationAlert, setShowMuteNotificationAlert] =
     useState(false);
 
-  // Implement showing of alert before blocking a user
   const userDropdownItems: DropdownItem[] = [
     {
       key: 1,
@@ -92,7 +91,6 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
     },
   ];
 
-  // Implement convex
   return (
     <div className="relative">
       {/* Chat Header */}
