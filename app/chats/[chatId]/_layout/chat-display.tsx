@@ -139,7 +139,12 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
               )}
               key={chat.id}
             >
-              {!isMyChat && <UserIcon />}
+              {!isMyChat && (
+                <UserIcon
+                  className="bg-blue-500 rounded-full p-2 text-white"
+                  size={30}
+                />
+              )}
               <div
                 className={cn(
                   "bg-slate-200 p-2",
@@ -191,7 +196,7 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Mute conversation</AlertDialogTitle>
-            <RadioGroup className="py-5 space-y-3" defaultValue="comfortable">
+            <RadioGroup className="py-5 space-y-3">
               {muteNotificationDurations.map((item) => (
                 <div
                   key={item.value}
