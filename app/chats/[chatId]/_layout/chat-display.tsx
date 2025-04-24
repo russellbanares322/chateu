@@ -196,14 +196,17 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Mute conversation</AlertDialogTitle>
-            <RadioGroup className="py-5 space-y-3">
+            <RadioGroup className="py-5 space-y-1">
               {muteNotificationDurations.map((item) => (
                 <div
                   key={item.value}
                   className="flex items-center space-x-2 hover:bg-slate-50 px-2 py-1 rounded-md cursor-pointer"
                 >
                   <RadioGroupItem value={item.value} id={item.value} />
-                  <Label className="text-md" htmlFor={item.value}>
+                  <Label
+                    className="text-md cursor-pointer"
+                    htmlFor={item.value}
+                  >
                     {item.label}
                   </Label>
                 </div>
