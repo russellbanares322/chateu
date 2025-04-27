@@ -19,7 +19,7 @@ export default function ChatInput() {
   return (
     <form
       onSubmit={onSubmit}
-      className="flex items-center bg-gray-100 gap-1 absolute rounded-md bottom-0 left-0 right-0 mx-auto w-[950px] mb-4 px-2"
+      className="flex items-center bg-gray-100 gap-1 absolute rounded-md bottom-0 left-0 right-0 mx-2 md:mx-auto w-auto max-w-[950px] mb-4 px-2"
     >
       <textarea
         autoFocus
@@ -35,7 +35,7 @@ export default function ChatInput() {
           />
           {showEmojiPicker && (
             <div className="absolute bottom-6 right-3">
-              <EmojiPicker />
+              <EmojiPicker onEmojiClick={(val) => console.log(val)} />
             </div>
           )}
         </div>
