@@ -33,7 +33,7 @@ const dummyChatData = Array.from({ length: 15 })
   .fill("")
   .map((_, index) => ({
     id: index,
-    authorId: index % 2 === 0 ? "XXY" : `ABC-${index}`,
+    userId: index % 2 === 0 ? "XXY" : `ABC-${index}`,
     message: "This is a sample message, test 123456.",
   }));
 
@@ -61,7 +61,7 @@ const muteNotificationDurations = [
 ];
 
 export default function ChatDisplay({ chatId }: ChatDisplayProps) {
-  const userId = "XXY";
+  const loggedUserId = "XXY";
   const [showBlockUserAlert, setShowBlockUserAlert] = useState(false);
   const [showMuteNotificationAlert, setShowMuteNotificationAlert] =
     useState(false);
@@ -130,7 +130,7 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
         style={{ maxHeight: "calc(100% - 410px)" }}
       >
         {dummyChatData.map((chat) => {
-          const isMyChat = chat.authorId === userId;
+          const isMyChat = chat.userId === loggedUserId;
           return (
             <div
               className={cn(
