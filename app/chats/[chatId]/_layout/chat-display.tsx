@@ -23,6 +23,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { DropdownItem } from "@/constants/types";
 import { cn } from "@/lib/utils";
 import { Bell, EllipsisIcon, UserIcon, UserX } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 type ChatDisplayProps = {
@@ -62,6 +63,7 @@ const muteNotificationDurations = [
 
 export default function ChatDisplay({ chatId }: ChatDisplayProps) {
   const loggedUserId = "XXY";
+  const router = useRouter();
   const [showBlockUserAlert, setShowBlockUserAlert] = useState(false);
   const [showMuteNotificationAlert, setShowMuteNotificationAlert] =
     useState(false);
@@ -71,7 +73,7 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
       key: 1,
       label: "View profile",
       icon: <UserIcon />,
-      action: () => console.log("View Profile"),
+      action: () => router.push(`/profile/1`),
     },
     {
       key: 2,
