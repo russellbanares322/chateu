@@ -7,7 +7,6 @@ type ProfileProps = {
 export default async function Profile({ params }: ProfileProps) {
   const { userId } = await params;
 
-  // Display image of user and details
   return (
     <div className="flex items-center justify-center min-h-[80vh]">
       <div className="bg-white rounded-xl max-w-[500px] w-full mx-5 relative">
@@ -16,7 +15,7 @@ export default async function Profile({ params }: ProfileProps) {
           {/* Image and name of user */}
           <div className="space-y-2">
             <div className="bg-gray h-16 w-16 rounded-full border-[3px] border-solid border-white" />
-            <p className="text-lg font-semibold">FullName</p>
+            <p className="text-lg font-semibold">FullName - {userId}</p>
           </div>
         </div>
       </div>
