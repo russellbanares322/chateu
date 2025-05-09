@@ -10,7 +10,6 @@ type ProfileProps = {
 export default async function Profile({ params }: ProfileProps) {
   const { userId } = await params;
 
-  // Implement user profile copy functionality
   return (
     <div className="flex items-center justify-center min-h-[80vh]">
       <div className="bg-white rounded-xl max-w-[500px] w-full mx-5 relative">
