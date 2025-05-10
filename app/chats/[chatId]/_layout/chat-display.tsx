@@ -128,7 +128,7 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
       </div>
       {/* Chat Content */}
       <div
-        className="flex flex-col gap-5 overflow-auto pt-7"
+        className="flex flex-col gap-5 overflow-auto pt-7 mb-6 md:mb-0"
         style={{ maxHeight: "calc(100% - 410px)" }}
       >
         {dummyChatData.map((chat) => {

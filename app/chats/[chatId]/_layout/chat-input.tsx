@@ -19,7 +19,7 @@ export default function ChatInput() {
   return (
     <form
       onSubmit={onSubmit}
-      className="flex items-center bg-gray-100 gap-1 absolute rounded-md bottom-0 left-0 right-0 mx-2 md:mx-auto w-auto max-w-[950px] mb-4 px-2"
+      className="flex items-center bg-gray-100 gap-1 absolute rounded-md bottom-0 left-0 right-0 mx-0 md:mx-auto w-auto max-w-[950px] mb-0 md:mb-4 px-2 translate-y-1 md:translate-y-0"
     >
       <textarea
         autoFocus
