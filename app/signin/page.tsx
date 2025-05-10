@@ -16,7 +16,7 @@ export default function SignInPage() {
       <div className="shadow-md border rounded-xl p-3 w-full bg-white">
         <div className="flex items-center flex-col justify-center gap-1 mb-6">
           <h1 className="text-2xl font-bold underline">Welcome to CHATEU</h1>
-          <p className="font-medium">Sign In to continue</p>
+          <p className="font-medium">Sign In</p>
         </div>
         <Button
           className="w-full bg-green-600 hover:bg-green-700 duration-200 ease-in-out"
