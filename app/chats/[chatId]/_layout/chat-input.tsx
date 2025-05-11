@@ -12,8 +12,10 @@ export default function ChatInput() {
     setShowEmojiPicker((prev) => !prev);
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    console.log(formData.get("message"));
   };
 
   return (
@@ -25,6 +27,7 @@ export default function ChatInput() {
         autoFocus
         className="border max-h-[900px] rounded-md p-1 bg-gray-100  w-full outline-none border-none resize-none"
         placeholder="Enter your chat here..."
+        name="message"
       />
       <div className="flex items-center gap-3">
         <div className="relative">
