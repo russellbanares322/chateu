@@ -15,7 +15,8 @@ export default function ChatInput() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    console.log(formData.get("message"));
+    const message = formData.get("message");
+    alert(message);
   };
 
   return (
