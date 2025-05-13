@@ -61,6 +61,7 @@ const muteNotificationDurations = [
   },
 ];
 
+// Implement convex
 export default function ChatDisplay({ chatId }: ChatDisplayProps) {
   const loggedUserId = "XXY";
   const router = useRouter();
