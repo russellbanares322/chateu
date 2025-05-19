@@ -40,22 +40,27 @@ const dummyChatData = Array.from({ length: 15 })
 
 const muteNotificationDurations = [
   {
+    id: 1,
     label: "For 15 minutes",
     value: "15/min",
   },
   {
+    id: 2,
     label: "For 1 hour",
     value: "1/hour",
   },
   {
+    id: 3,
     label: "For 8 hours",
     value: "8/hour",
   },
   {
+    id: 4,
     label: "For 24 hours",
     value: "24/hour",
   },
   {
+    id: 5,
     label: "Until I turn it back on",
     value: "custom",
   },
