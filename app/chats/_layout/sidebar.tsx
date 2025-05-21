@@ -14,7 +14,7 @@ export default function Sidebar() {
 
   return (
     <div className="py-14 pl-2">
-      <h1 className="text-white mb-5 ml-1 outline-black">CHATEU</h1>
+      <h1 className="text-white mb-5 ml-1 outline-black border">CHATEU</h1>
       <ul className="space-y-10  w-full">
         {sampleData?.map((user) => (
           <Link key={user.id} href={`/chats/${user.chatId}`}>
