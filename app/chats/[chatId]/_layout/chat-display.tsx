@@ -30,6 +30,7 @@ type ChatDisplayProps = {
   chatId: string;
 };
 
+// Map real data
 const dummyChatData = Array.from({ length: 15 })
   .fill("")
   .map((_, index) => ({
