@@ -12,7 +12,6 @@ export default function Sidebar() {
     name: `User ${index + 1}`,
   }));
 
-  // Implement convex
   return (
     <div className="py-14 pl-2">
       <h1 className="text-white mb-5 ml-1 outline-black border">CHATEU</h1>
