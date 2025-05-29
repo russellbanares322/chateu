@@ -12,7 +12,7 @@ export default async function Profile({ params }: ProfileProps) {
 
   return (
     <div className="flex items-center justify-center min-h-[80vh]">
-      <div className="bg-white rounded-xl max-w-[500px] w-full mx-5 relative">
+      <div className="bg-white rounded-xl max-w-[700px] w-full mx-5 relative">
         <div className="bg-gray/15 w-full h-16 rounded-tl-xl rounded-tr-xl absolute" />
         <div className="p-5 mt-4">
           {/* Image and name of user*/}
