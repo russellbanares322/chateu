@@ -102,7 +102,7 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
   return (
     <div className="relative">
       {/* Chat Header */}
-      <div className="border-b w-full  bg-white sticky flex items-center justify-between mb-2 gap-2 py-2">
+      <div className="border-b w-full bg-white sticky flex items-center justify-between mb-2 gap-2 py-2">
         <div className="flex items-start gap-2">
           <UserIcon
             className="bg-blue-500 rounded-full p-2 text-white"
