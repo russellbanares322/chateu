@@ -20,6 +20,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { DropdownItem } from "@/constants/types";
 import { cn } from "@/lib/utils";
 import { Bell, EllipsisIcon, UserIcon, UserX } from "lucide-react";
@@ -37,10 +43,9 @@ const dummyChatData = Array.from({ length: 15 })
     id: index,
     userId: index % 2 === 0 ? "XXY" : `ABC-${index}`,
     message: "This is a sample message, test 123456.",
-    timeStamp: new Date(Date.now() * Math.ceil(Math.random() * 5)),
+    timeStamp: new Date(Date.now() * Math.ceil(Math.random() * 10)),
   }));
 
-console.log(dummyChatData);
 const muteNotificationDurations = [
   {
     id: 1,
@@ -155,16 +160,28 @@ export default function ChatDisplay({ chatId }: ChatDisplayProps) {
                   size={30}
                 />
               )}
-              <div
-                className={cn(
-                  "bg-slate-200 p-2",
-                  isMyChat
-                    ? "rounded-tl-xl rounded-bl-xl rounded-tr-xl rounded-br-sm"
-                    : "rounded-tl-xl rounded-br-xl rounded-tr-xl rounded-bl-sm",
-                )}
-              >
-                <p>{chat.message}</p>
-              </div>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div
+                      className={cn(
+                        "bg-slate-200 p-2",
+                        isMyChat
+                          ? "rounded-tl-xl rounded-bl-xl rounded-tr-xl rounded-br-sm"
+                          : "rounded-tl-xl rounded-br-xl rounded-tr-xl rounded-bl-sm",
+                      )}
+                    >
+                      <p>{chat.message}</p>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>
+                      Sent:{" "}
+                      {`${new Date(chat.timeStamp).toDateString()}, ${new Date(chat.timeStamp).toLocaleTimeString()}`}
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
           );
         })}
