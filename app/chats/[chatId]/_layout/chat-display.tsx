@@ -37,8 +37,10 @@ const dummyChatData = Array.from({ length: 15 })
     id: index,
     userId: index % 2 === 0 ? "XXY" : `ABC-${index}`,
     message: "This is a sample message, test 123456.",
+    timeStamp: new Date(Date.now() * Math.ceil(Math.random() * 5)),
   }));
 
+console.log(dummyChatData);
 const muteNotificationDurations = [
   {
     id: 1,
