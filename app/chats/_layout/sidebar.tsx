@@ -11,6 +11,8 @@ export default function Sidebar() {
     id: index + 1,
     name: `User ${index + 1}`,
   }));
+  const splittedPathname = pathname.split("/");
+  const currentPath = splittedPathname[splittedPathname.length - 1];
 
   return (
     <div className="py-14 pl-2">
@@ -21,7 +23,7 @@ export default function Sidebar() {
             <li
               className={cn(
                 "text-white cursor-pointer mb-1 py-1 px-2 rounded-md",
-                pathname.includes(String(user.id))
+                Number(currentPath) === user.id
                   ? "bg-blue-500"
                   : "bg-none hover:bg-slate-300 hover:text-black",
               )}
