@@ -34,7 +34,9 @@ export default async function Profile({ params }: ProfileProps) {
           </div>
         </div>
         {/* Content */}
-        <div className="mx-5 pb-2">Content</div>
+        <div className="mx-5 pb-2">
+          <p>Content</p>
+        </div>
       </div>
     </div>
   );
