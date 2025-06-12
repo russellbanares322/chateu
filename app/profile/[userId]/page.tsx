@@ -19,7 +19,7 @@ export default async function Profile({ params }: ProfileProps) {
           <div className="flex justify-between items-center">
             <div className="space-y-2">
               <div className="bg-gray h-16 w-16 rounded-full border-[3px] border-solid border-white" />
-              <p className="text-lg font-semibold">FullName - {userId}</p>
+              <p className="text-lg font-semibold">User Id: {userId}</p>
             </div>
             {/* Extra action buttons */}
             <div className="mt-1">
