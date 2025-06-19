@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function ChatInput() {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-
+  const [input, setInput] = useState("");
   const onToggleShowEmojiPicker = () => {
     setShowEmojiPicker((prev) => !prev);
   };
@@ -29,6 +29,7 @@ export default function ChatInput() {
         className="border max-h-[900px] rounded-md p-1 bg-gray-100  w-full outline-none border-none resize-none"
         placeholder="Enter your chat here..."
         name="message"
+        value={input}
       />
       <div className="flex items-center gap-3">
         <div className="relative">
@@ -39,7 +40,7 @@ export default function ChatInput() {
           />
           {showEmojiPicker && (
             <div className="absolute bottom-6 right-3">
-              <EmojiPicker onEmojiClick={(val) => console.log(val)} />
+              <EmojiPicker onEmojiClick={(val) => setInput(val.emoji)} />
             </div>
           )}
         </div>
