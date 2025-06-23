@@ -10,6 +10,7 @@ type ProfileProps = {
 export default async function Profile({ params }: ProfileProps) {
   const { userId } = await params;
 
+  // Map real data
   return (
     <div className="flex items-center justify-center min-h-[80vh]">
       <div className="bg-white rounded-xl max-w-[720px] w-full mx-5 relative">
