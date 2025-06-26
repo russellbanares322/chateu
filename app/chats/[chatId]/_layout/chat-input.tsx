@@ -24,6 +24,7 @@ export default function ChatInput() {
     newInputs.push(value);
     setInputs(newInputs);
   };
+
   return (
     <form
       onSubmit={onSubmit}
