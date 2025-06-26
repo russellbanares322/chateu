@@ -20,7 +20,9 @@ export default function ChatInput() {
   };
 
   const onInputChange = (value: string) => {
-    setInputs([...inputs, value]);
+    const newInputs = [...inputs];
+    newInputs.push(value);
+    setInputs(newInputs);
   };
   return (
     <form
@@ -36,7 +38,9 @@ export default function ChatInput() {
         value={inputs.join("")}
         onKeyDown={(e) => {
           if (e.key === "Backspace") {
-            console.log("Delete Inputs");
+            const newInputs = [...inputs];
+            newInputs.pop();
+            setInputs(newInputs);
           }
         }}
       />
