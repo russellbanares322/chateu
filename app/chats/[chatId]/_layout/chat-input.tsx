@@ -25,6 +25,7 @@ export default function ChatInput() {
     setInputs(newInputs);
   };
 
+  // Properly get inputs value
   return (
     <form
       onSubmit={onSubmit}
@@ -33,7 +34,7 @@ export default function ChatInput() {
       <textarea
         autoFocus
         className="border max-h-[900px] rounded-md p-1 bg-gray-100  w-full outline-none border-none resize-none"
-        placeholder="Enter your chat here..."
+        placeholder="Type "
         name="message"
         onChange={(e) => onInputChange(e.target.value)}
         value={inputs.join("")}
