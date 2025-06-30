@@ -25,7 +25,6 @@ export default function ChatInput() {
     setInputs(newInputs);
   };
 
-  // Properly get inputs value
   return (
     <form
       onSubmit={onSubmit}
