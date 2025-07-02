@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function ChatInput() {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const [inputs, setInputs] = useState<string[]>([]);
+  const [input, setInput] = useState("");
   const onToggleShowEmojiPicker = () => {
     setShowEmojiPicker((prev) => !prev);
   };
@@ -19,12 +19,6 @@ export default function ChatInput() {
     alert(message);
   };
 
-  const onInputChange = (value: string) => {
-    const newInputs = [...inputs];
-    newInputs.push(value);
-    setInputs(newInputs);
-  };
-  // Properly get chat-inputs data
   return (
     <form
       onSubmit={onSubmit}
@@ -35,15 +29,10 @@ export default function ChatInput() {
         className="border max-h-[900px] rounded-md p-1 bg-gray-100  w-full outline-none border-none resize-none"
         placeholder="Type "
         name="message"
-        onChange={(e) => onInputChange(e.target.value)}
-        value={inputs.join("")}
-        onKeyDown={(e) => {
-          if (e.key === "Backspace") {
-            const newInputs = [...inputs];
-            newInputs.pop();
-            setInputs(newInputs);
-          }
+        onChange={(e) => {
+          setInput(e.target.value);
         }}
+        value={input}
       />
       <div className="flex items-center gap-3">
         <div className="relative">
@@ -54,7 +43,9 @@ export default function ChatInput() {
           />
           {showEmojiPicker && (
             <div className="absolute bottom-6 right-3">
-              <EmojiPicker onEmojiClick={(val) => onInputChange(val.emoji)} />
+              <EmojiPicker
+                onEmojiClick={(val) => setInput(input.concat(val.emoji))}
+              />
             </div>
           )}
         </div>
