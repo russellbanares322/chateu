@@ -19,6 +19,7 @@ export default function ChatInput() {
     console.log(message);
   };
 
+  // Connect to api
   return (
     <form
       onSubmit={onSubmit}
