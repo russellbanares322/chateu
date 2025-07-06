@@ -16,7 +16,7 @@ export default function ChatInput() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const message = formData.get("message");
-    console.log(message);
+    alert(message);
   };
 
   return (
