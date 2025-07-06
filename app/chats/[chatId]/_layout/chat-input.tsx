@@ -44,7 +44,12 @@ export default function ChatInput() {
           {showEmojiPicker && (
             <div className="absolute bottom-6 right-3">
               <EmojiPicker
-                onEmojiClick={(val) => setInput(input.concat(val.emoji))}
+                onEmojiClick={(val) => {
+                  if (input.trim().length === 0) {
+                    return setInput(val.emoji);
+                  }
+                  return setInput((prev) => prev.concat(val.emoji));
+                }}
               />
             </div>
           )}
