@@ -19,7 +19,6 @@ export default function ChatInput() {
     alert(message);
   };
 
-  // Send data to backend
   return (
     <form
       onSubmit={onSubmit}
