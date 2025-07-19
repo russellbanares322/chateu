@@ -28,7 +28,7 @@ export default function ChatInput() {
       <textarea
         autoFocus
         className="border max-h-[900px] rounded-md p-1 bg-gray-100  w-full outline-none border-none resize-none"
-        placeholder="Type "
+        placeholder="Enter your chat here..."
         name="message"
         onChange={(e) => {
           setInput(e.target.value);
