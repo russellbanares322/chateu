@@ -19,7 +19,6 @@ export default function ChatInput() {
     alert(message);
   };
 
-  // Implement convex
   return (
     <form
       onSubmit={onSubmit}
