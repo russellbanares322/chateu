@@ -11,7 +11,7 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   title: "Chateu",
-  description: "Allows you to connect with your friends.",
+  description: "Allows you to connect with other people.",
   icons: {
     icon: "/convex.svg",
   },
