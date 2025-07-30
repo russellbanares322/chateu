@@ -1,6 +1,7 @@
 import { v } from "convex/values";
 import { query } from "./_generated/server";
 
+// Instantiate post and update api call
 export const chats = query({
     args: { chatSessionId: v.string() },
     handler: async (ctx, args) => {
