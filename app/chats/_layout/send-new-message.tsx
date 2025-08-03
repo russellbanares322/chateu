@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { SendIcon } from "lucide-react";
 
 export default function SendNewMessage() {
-  // Implement convex
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="bg-white shadow-md p-6 rounded-md">
