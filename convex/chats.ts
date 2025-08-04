@@ -1,6 +1,5 @@
 import { v } from "convex/values";
-import { mutation, query } from "./_generated/server";
-import { randomUUID } from "crypto";
+import { query } from "./_generated/server";
 
 // Instantiate post and update api call
 export const chats = query({
@@ -12,14 +11,13 @@ export const chats = query({
     }
 })
 
-export const sendMessage = mutation({
-    args: {userIds: v.array(v.string())},
-    handler: async (ctx, args) => {
-        await ctx.db.insert("chats", {
-            chatItems:{
-            userIds: args.userIds
-            },
-            chatSessionId: randomUUID()
-        })
-    }
-})
+// export const sendMessage = mutation({
+//     args: {userIds: v.array(v.string())},
+//     handler: async (ctx, args) => {
+//         await ctx.db.insert("chats", {
+//             chatItems:{
+//             userIds: args.userIds
+//             },
+//         })
+//     }
+// })
