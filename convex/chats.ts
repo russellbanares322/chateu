@@ -10,13 +10,3 @@ export const chats = query({
     }
 })
 
-// export const sendMessage = mutation({
-//     args: {userIds: v.array(v.string())},
-//     handler: async (ctx, args) => {
-//         await ctx.db.insert("chats", {
-//             chatItems:{
-//             userIds: args.userIds
-//             },
-//         })
-//     }
-// })
