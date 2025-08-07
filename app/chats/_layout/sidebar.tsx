@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const sampleData = new Array(10).fill("").map((_, index) => ({
+  const sampleData = [...Array(10)].map((_, index) => ({
     chatId: String(index + 1),
     id: index + 1,
     name: `User ${index + 1}`,
