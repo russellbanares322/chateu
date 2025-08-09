@@ -11,7 +11,6 @@ type ChatProps = {
 export default async function Chat({ params }: ChatProps) {
   const { chatId } = await params;
 
-  console.log(chatId);
   return (
     <ChatLayout>
       <div className="flex gap-2 items-center justify-center overflow-y-hidden">
