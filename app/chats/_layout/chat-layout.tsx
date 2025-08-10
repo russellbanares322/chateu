@@ -8,6 +8,8 @@ export default function ChatLayout({
 }) {
   const hasChats = true;
 
+  // Properly get chats in convex db
+
   return (
     <div className="min-h-screen h-full w-full">
       {hasChats && (
