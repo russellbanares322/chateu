@@ -54,7 +54,7 @@ export default function ChatInput() {
             </div>
           )}
         </div>
-        <Button type="submit">
+        <Button disabled={!input} type="submit">
           Send <SendIcon />
         </Button>
       </div>
