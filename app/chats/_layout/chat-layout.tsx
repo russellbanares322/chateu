@@ -8,7 +8,6 @@ export default function ChatLayout({
 }) {
   const hasChats = true;
 
-  // Implement convex
   return (
     <div className="min-h-screen h-full w-full">
       {hasChats && (
