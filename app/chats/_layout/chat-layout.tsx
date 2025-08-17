@@ -19,7 +19,7 @@ export default function ChatLayout({
           </div>
           {/* Main Content */}
           <div className="col-span-8 md:col-span-7 w-full max-h-[900px] h-full">
-            <div className="bg-white p-10 m-7 rounded-xl h-auto">
+            <div className="bg-white p-10 m-7 rounded-xl h-full">
               {children}
             </div>
           </div>
