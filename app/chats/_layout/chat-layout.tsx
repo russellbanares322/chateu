@@ -8,6 +8,7 @@ export default function ChatLayout({
 }) {
   const hasChats = true;
 
+  // Display real data
   return (
     <div className="min-h-screen h-full w-full">
       {hasChats && (
