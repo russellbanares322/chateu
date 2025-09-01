@@ -12,7 +12,6 @@ export default function ChatInput() {
     setShowEmojiPicker((prev) => !prev);
   };
 
-  // Display real data
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
