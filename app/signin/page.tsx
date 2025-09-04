@@ -11,6 +11,7 @@ import Image from "next/image";
 export default function SignInPage() {
   const { signIn } = useAuthActions();
 
+  // Connect to db
   return (
     <div className="flex items-center justify-center min-h-screen max-w-[500px] mx-auto">
       <div className="shadow-md border rounded-xl p-3 w-full bg-white">
