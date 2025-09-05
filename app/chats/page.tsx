@@ -1,6 +1,7 @@
 import ChatLayout from "./_layout/chat-layout";
 
 export default function ChatPage() {
+  // Display real data
   return (
     <ChatLayout>
       <div className="flex items-center justify-center w-full h-full">
