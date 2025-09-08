@@ -15,7 +15,7 @@ export default function SignInPage() {
     <div className="flex items-center justify-center min-h-screen max-w-[500px] mx-auto">
       <div className="shadow-md border rounded-xl p-3 w-full bg-white">
         <div className="flex items-center flex-col justify-center gap-1 mb-6">
-          <h1 className="text-2xl font-bold">Welcome to CHATEU.</h1>
+          <h1 className="text-2xl font-bold">Welcome to CHATEU</h1>
           <p className="font-medium">Sign In to continue</p>
         </div>
         <Button
