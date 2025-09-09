@@ -4,7 +4,7 @@ export default function ChatPage() {
   return (
     <ChatLayout>
       <div className="flex items-center justify-center w-full h-full">
-        <h1>Start Chatting with Friends</h1>
+        <h1>Start connecting with other people</h1>
       </div>
     </ChatLayout>
   );
