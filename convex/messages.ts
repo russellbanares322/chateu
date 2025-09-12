@@ -5,9 +5,7 @@ import { mutation, query } from "./_generated/server";
 export const list = query({
   args: {},
   handler: async (ctx) => {
-    // Grab the most recent messages.
     const messages = await ctx.db.query("messages").order("desc").take(100);
-    // Add the author's name to each message.
     return Promise.all(
       messages.map(async (message) => {
         const { name, email } = (await ctx.db.get(message.userId))!;
