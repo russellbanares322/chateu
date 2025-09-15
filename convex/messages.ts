@@ -22,7 +22,6 @@ export const send = mutation({
     if (userId === null) {
       throw new Error("Not signed in");
     }
-    // Send a new message.
     await ctx.db.insert("messages", { body, userId });
   },
 });
